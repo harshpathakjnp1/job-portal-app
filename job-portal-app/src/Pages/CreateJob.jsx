@@ -133,11 +133,57 @@ const CreateJob = () => {
           </div>
 
           {/* 6th row  */}
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="lg:w-1/2 w-full ">
+              <label className="block mb-2 text-lg">Company Logo</label>
+              <input
+                type="url"
+                placeholder="Paste your company logo URL : http://wesharelogo/img1"
+                {...register("companyLogo")}
+                className="create-job-input"
+              />
+            </div>
+            <div className="lg:w-1/2 w-full ">
+              <label className="block mb-2 text-lg">Employment Type</label>
+              <select {...register("employmentType")} className="create-job-input">
+                <option value="">Choose your Employment Type</option>
+                <option value="Full-time">Full-time</option>
+                <option value="Part-time">Part-time       </option>
+                <option value="Temporary">Temporary</option>
+              </select>
+
+            </div>
+
+          </div>
+
+          {/* 7th row  */}
+          <div className="w-full">
+            <label className="block mb-2 text-lg">Job Description</label>
+            <textarea className="w-full pl-3 py-1.5 focus:outline-none  placeholder:text-gray-500 " {...register("description")}
+              rows={6}
+
+              placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam vero beatae. Nisi sequi aut laboriosam animi dignissimos fugiat cumque!" />
+          </div>
+
+          {/* 8th row  */}
+          <div className="w-full">
+            <label className="block mb-2 text-lg">Job Posted By</label>
+            <input
+              type="email"
+              placeholder="your email @gmail.com"
+              {...register("postedBy")}
+              className="create-job-input"
+            />
+
+          </div>
+
+
 
 
           <input type="submit" className="my-5 block mt-12 bg-blue text-white font-semibold px-8 py-2 rounded-sm cursor-pointer" />
         </form>
       </div>
+
     </div>
   );
 };
